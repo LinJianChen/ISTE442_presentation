@@ -7,7 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace ISTE_422_presentation
+namespace ISTE442_presentation
 {
     public class Program
     {

@@ -1,46 +1,46 @@
-﻿@model ISTE_422_presentation.Models.Contact
-
+﻿@model ISTE442_presentation.Models.Contact
 <!DOCTYPE html>
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Add Contact </title>
+    <title>Add Contact</title>
+
 </head>
 <body>
     <h2>Add Contact</h2>
-     <form method="post" asp-controller="Contact" asp-action="add">
-         <table>
-             <tr>
-                 <td>Last Name</td>
-                 <td>
-                     <input type="text" asp-for="lastName" required="required" />
-                 </td>
-             </tr>
-             <tr>
-                 <td>First Name</td>
-                 <td>
-                     <input type="text" asp-for="firstName" required="required" />
-                 </td>
-             </tr>
-             <tr>
-                 <td>Email</td>
-                 <td>
-                     <input type="text" asp-for="email" required="required" />
-                 </td>
-             </tr>
-             <tr>
-                 <td>Phone Number</td>
-                 <td>
-                     <input type="text" asp-for="phone_num" required="required" />
-                 </td>
-             </tr>
-             <tr>
-                 <td>&nbsp;</td>
-                 <td>
-                     <input type="submit" value="Save" asp-for="contactId" min="0" required="required"/>
-                 </td>
-             </tr>
-         </table>
-     </form>
+    <form method="post" asp-controller="Contact" asp-action="add">
+        <table>
+            <tr>
+                <td>Last Name</td>
+                <td>
+                    <input type="text" asp-for="lastName" required="required" />
+                </td>
+            </tr>
+            <tr>
+                <td>First Name</td>
+                <td>
+                    <input type="text" asp-for="firstName" required="required" />
+                </td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td>
+                    <input type="text" asp-for="email" required="required" />
+                </td>
+            </tr>
+            <tr>
+                <td>Phone</td>
+                <td>
+                    <input type="text" asp-for="phone_num" required="required" />
+                </td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>
+                    <input type="submit" value="Save" asp-for="contactId" min="0" required="required"/>
+                </td>
+            </tr>
+        </table>
+    </form>
 </body>
 </html>
