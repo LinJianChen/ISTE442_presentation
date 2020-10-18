@@ -4,11 +4,14 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ISTE442_presentation.Models
+namespace ISTE_422_presentation.Models
 {
     [Table("contact")]
     public class Contact
     {
+        private ContactStoreContext context;
+
+        //parameters for contact table row data
         public int contactId { get; set; }
         public string lastName { get; set; }
         public string firstName { get; set; }

@@ -1,23 +1,29 @@
-﻿@model ISTE442_presentation.Models.Contact
+﻿@model ISTE_422_presentation.Models.Contact
+@*@{
+        ViewData["Title"] = "Index";
+    }*@
 
 <!DOCTYPE html>
 <html>
 <head>
-    <meta name="viewport" content="width=device-width"/>
+    <meta name="viewport" content="width=device-width" />
     <title>Contact List</title>
     <style>
-        table{
-            font-family:Arial, sans-serif;
-            border-collapse:collapse;
-            width:60%;
+
+        table {
+            font-family: Arial,sans-serif;
+            border-collapse: collapse;
+            width: 50%;
         }
-        td, th{
+
+        td, th {
             border: 1px solid #ddd;
             text-align: left;
-            padding: 8px;
+            padding: 8px
         }
-        tr:nth-child(even){
-            background-color:#ddd;
+
+        tr:nth-child(even) {
+            background-color: #ddd;
         }
         #addContact {
             display: block;
@@ -29,8 +35,8 @@
             border-radius: 5px;
             color: white;
             font-weight: bold;
-            text-decoration:none;
-            margin-bottom:10px;
+            text-decoration: none;
+            margin-bottom: 10px;
         }
     </style>
 </head>
@@ -46,7 +52,7 @@
             <th>Phone</th>
             <th>Action</th>
         </tr>
-        @foreach(var contact in ViewBag.contacts)
+        @foreach (var contact in ViewBag.contacts)
         {
             <tr>
                 <td>@contact.contactId</td>
@@ -54,7 +60,7 @@
                 <td>@contact.firstName</td>
                 <td>@contact.email</td>
                 <td>@contact.phone_num</td>
-                <td><a asp-controller="contact" asp-action="Edit" asp-route-id="@contact.contactId">Edit</a> | <a asp-controller="contact" asp-action="Delete" asp-route-id="@contact.contactId">Delete</a></td>
+                <td><a asp-controller="contact" asp-action="edit" asp-route-id="@contact.contactId">Edit</a> | <a asp-controller="contact" asp-action="Delete" asp-route-id="@contact.contactId">Delete</a></td>
             </tr>
         }
     </table>
