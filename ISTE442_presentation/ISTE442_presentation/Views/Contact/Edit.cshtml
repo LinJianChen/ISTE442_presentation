@@ -1,0 +1,47 @@
+﻿@model ISTE442_presentation.Models.Contact
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Edit Contact</title>
+
+</head>
+<body>
+    <h2>Edit Contact</h2>
+    <form method="post" asp-controller="Contact" asp-action="Edit">
+        <table>
+            <tr>
+                <td>Last Name</td>
+                <td>
+                    <input type="text" asp-for="lastName" required="required" />
+                </td>
+            </tr>
+            <tr>
+                <td>First Name</td>
+                <td>
+                    <input type="text" asp-for="firstName" required="required" />
+                </td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td>
+                    <input type="text" asp-for="email" required="required" />
+                </td>
+            </tr>
+            <tr>
+                <td>Phone</td>
+                <td>
+                    <input type="text" asp-for="phone_num" required="required" />
+                </td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>
+                    <input type="submit" value="Save"/>
+                    <input type="hidden" asp-for="contactId"/>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

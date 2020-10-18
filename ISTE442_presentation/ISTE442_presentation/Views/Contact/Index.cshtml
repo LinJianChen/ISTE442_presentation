@@ -1,0 +1,62 @@
+﻿@model ISTE442_presentation.Models.Contact
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width"/>
+    <title>Contact List</title>
+    <style>
+        table{
+            font-family:Arial, sans-serif;
+            border-collapse:collapse;
+            width:60%;
+        }
+        td, th{
+            border: 1px solid #ddd;
+            text-align: left;
+            padding: 8px;
+        }
+        tr:nth-child(even){
+            background-color:#ddd;
+        }
+        #addContact {
+            display: block;
+            width: 115px;
+            height: 18px;
+            background: #4E9CAF;
+            padding: 10px;
+            text-align: center;
+            border-radius: 5px;
+            color: white;
+            font-weight: bold;
+            text-decoration:none;
+            margin-bottom:10px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Contact List</h2>
+    <a asp-controller="contact" asp-action="Add" id="addContact">Add</a>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Last Name</th>
+            <th>First Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Action</th>
+        </tr>
+        @foreach(var contact in ViewBag.contacts)
+        {
+            <tr>
+                <td>@contact.contactId</td>
+                <td>@contact.lastName</td>
+                <td>@contact.firstName</td>
+                <td>@contact.email</td>
+                <td>@contact.phone_num</td>
+                <td><a asp-controller="contact" asp-action="Edit" asp-route-id="@contact.contactId">Edit</a> | <a asp-controller="contact" asp-action="Delete" asp-route-id="@contact.contactId">Delete</a></td>
+            </tr>
+        }
+    </table>
+</body>
+</html>
